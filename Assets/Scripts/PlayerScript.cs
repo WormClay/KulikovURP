@@ -12,10 +12,8 @@ public class PlayerScript : MonoBehaviour
         GUI.Label(new Rect(10, 100, 200, 20), $"Helth: {myHelth}");
     }
 
-    // Start is called before the first frame update
     void Start()
     {
         myHelth = settings.maxHelth;
     }
-
 }
