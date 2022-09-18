@@ -10,6 +10,7 @@ public class CameraScript : MonoBehaviour
     public float distanceAway = 1.7f;
     public float distanceUp = 1.3f;
     public float smooth = 2f;
+    public float lookUp = 1f;
 
     private Vector3 TargetPosition;
 
@@ -26,6 +27,6 @@ public class CameraScript : MonoBehaviour
 
         TargetPosition = hero.position + Vector3.up * distanceUp - hero.forward * distanceAway;
         transform.position = Vector3.Lerp(transform.position, TargetPosition, Time.deltaTime * smooth);
-        transform.LookAt(hero);
+        transform.LookAt(hero.position + (Vector3.up * lookUp));
     }
 }
